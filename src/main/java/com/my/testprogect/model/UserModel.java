@@ -5,10 +5,12 @@ import lombok.*;
 
 @Data
 @Entity
+@NoArgsConstructor
+// todo в Data есть аннотации ниже
 @Getter
 @Setter
-@NoArgsConstructor
 @EqualsAndHashCode
+// Попробуй @Accessors(chain = true)
 public class UserModel {
     @Id
     @Column(name = "id")

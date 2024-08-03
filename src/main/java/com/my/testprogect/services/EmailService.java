@@ -11,6 +11,7 @@ import java.util.concurrent.TimeoutException;
 @Service
 public class EmailService {
     @Autowired
+    // todo final + reqArgConst
     private SendMailer sendMailer;
 
     public void sendEmail(String to, String subject, String body) {

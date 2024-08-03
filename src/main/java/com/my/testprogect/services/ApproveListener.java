@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ApproveListener implements MessageListener<ApproveResponse> {
+    // todo fina + requiredArgsConstructor
     @Autowired
     private UsersRepository usersRepository;
     @Autowired

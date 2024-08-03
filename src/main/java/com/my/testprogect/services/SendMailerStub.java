@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 @Service
 public class SendMailerStub implements SendMailer {
+    // todo попробуй Slf4j или Log4j2
     private static final Logger log = LoggerFactory.getLogger(SendMailerStub.class);
 
     @Override

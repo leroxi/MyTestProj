@@ -9,12 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-
+// todo чо за пустая строка
 public class RegistrationService {
+    // todo final
     private UsersRepository usersRepository;
+    // todo final
     private MessagingService messagingService;
 
     @Autowired
+    // todo requiredArgsConstructor
     public RegistrationService(UsersRepository usersRepository, MessagingService messagingService) {
         this.usersRepository = usersRepository;
         this.messagingService = messagingService;

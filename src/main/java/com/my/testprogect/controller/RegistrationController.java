@@ -12,8 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/registration")
 public class RegistrationController {
+
+    // todo RequiredArgsConstructor
+    //      могу записать войс, почему это лучше
     @Autowired
     private RegistrationService registrationService;
+
+    // todo ну хоть слэш поставь
     @PostMapping
     public ResponseEntity<String> register(@RequestBody RegistrationForm registrationForm) {
      registrationService.registerUser(registrationForm);
