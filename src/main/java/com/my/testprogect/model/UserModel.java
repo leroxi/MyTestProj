@@ -2,15 +2,12 @@ package com.my.testprogect.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.Accessors;
 
 @Data
 @Entity
 @NoArgsConstructor
-// todo в Data есть аннотации ниже
-@Getter
-@Setter
-@EqualsAndHashCode
-// Попробуй @Accessors(chain = true)
+@Accessors(chain = true)
 public class UserModel {
     @Id
     @Column(name = "id")

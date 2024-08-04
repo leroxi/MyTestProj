@@ -5,16 +5,14 @@ import com.my.testprogect.model.ApproveResponse;
 import com.my.testprogect.model.Message;
 import com.my.testprogect.model.UserModel;
 import com.my.testprogect.repository.UsersRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class ApproveListener implements MessageListener<ApproveResponse> {
-    // todo fina + requiredArgsConstructor
-    @Autowired
-    private UsersRepository usersRepository;
-    @Autowired
-    private EmailService emailService;
+    private final UsersRepository usersRepository;
+    private final EmailService emailService;
 
     @Override
     public void handleMessage(Message<ApproveResponse> incomingMessage) {

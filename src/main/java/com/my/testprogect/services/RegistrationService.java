@@ -5,23 +5,14 @@ import com.my.testprogect.model.Message;
 import com.my.testprogect.model.RegistrationForm;
 import com.my.testprogect.model.UserModel;
 import com.my.testprogect.repository.UsersRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
-// todo чо за пустая строка
+@RequiredArgsConstructor
 public class RegistrationService {
-    // todo final
-    private UsersRepository usersRepository;
-    // todo final
-    private MessagingService messagingService;
-
-    @Autowired
-    // todo requiredArgsConstructor
-    public RegistrationService(UsersRepository usersRepository, MessagingService messagingService) {
-        this.usersRepository = usersRepository;
-        this.messagingService = messagingService;
-    }
+    private final UsersRepository usersRepository;
+    private final MessagingService messagingService;
 
     public void registerUser(RegistrationForm registrationForm) {
         UserModel user = new UserModel();

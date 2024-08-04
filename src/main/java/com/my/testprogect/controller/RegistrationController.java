@@ -2,7 +2,7 @@ package com.my.testprogect.controller;
 
 import com.my.testprogect.model.RegistrationForm;
 import com.my.testprogect.services.RegistrationService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -11,15 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/registration")
+@RequiredArgsConstructor
 public class RegistrationController {
+    private final RegistrationService registrationService;
 
-    // todo RequiredArgsConstructor
-    //      могу записать войс, почему это лучше
-    @Autowired
-    private RegistrationService registrationService;
-
-    // todo ну хоть слэш поставь
-    @PostMapping
+    @PostMapping("/")
     public ResponseEntity<String> register(@RequestBody RegistrationForm registrationForm) {
      registrationService.registerUser(registrationForm);
      return ResponseEntity.ok("Registration Successful");

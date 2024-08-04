@@ -4,18 +4,15 @@ import com.my.testprogect.messagingInterfaces.SendMailer;
 import com.my.testprogect.model.EmailAddress;
 import com.my.testprogect.model.EmailContent;
 import lombok.SneakyThrows;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 @Service
+@Slf4j
 public class SendMailerStub implements SendMailer {
-    // todo попробуй Slf4j или Log4j2
-    private static final Logger log = LoggerFactory.getLogger(SendMailerStub.class);
-
     @Override
     public void sendMail(EmailAddress toAddress, EmailContent messageBody) throws TimeoutException {
         if(shouldThrowTimeout()) {
